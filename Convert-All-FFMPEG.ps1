@@ -30,7 +30,6 @@ function Convert-All-FFMPEG {
           $ArgumentList = "-i {0} {1}" -f $File.FullName, $NewFile
         }
         $Split = $ArgumentList.Split(' ')
-        Write-Output $Split
         & "ffmpeg.exe" $Split    		
         if ($LASTEXITCODE -eq 0) {
           Write-Host "Conversion Successful" -ForegroundColor Green
